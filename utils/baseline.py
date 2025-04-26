@@ -28,7 +28,7 @@ class AttentionFusion(nn.Module):
 
         return fused_with_residual
 
-class Model(nn.Module):
+class baseline(nn.Module):
     def __init__(self, config):
         super().__init__()
         self.config = config
@@ -64,7 +64,7 @@ class Model(nn.Module):
         # 多模态融合输出层
         self.fused_output_layers = nn.Sequential(
             nn.Dropout(config.dropout),
-            nn.Linear(self.config.dimension if self.use_attnFusion, 512),  # 输入维度改为 768
+            nn.Linear(self.config.dimension if self.use_attnFusion else self.config.dimension*2, 512),  # 输入维度改为 768
             nn.ReLU(),
             nn.Linear(512, 1)
         )

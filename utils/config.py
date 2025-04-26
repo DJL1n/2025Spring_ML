@@ -10,6 +10,7 @@ class EnConfig(object):
                  batch_size=16,
                  num_hidden_layers=1,
                  use_context = False,
+                 use_attnFusion=False,
                  ):
         self.train_mode = 'regression'
         self.loss_weights = {'M': 1.5, 'T': 1, 'A': 1}
@@ -20,7 +21,7 @@ class EnConfig(object):
         self.early_stop = early_stop
         self.batch_size = batch_size
         self.use_context = use_context
-        self.attnFusion = True
+        self.use_attnFusion = use_attnFusion
 
         self.nheads = 16
         self.dimension = 1024

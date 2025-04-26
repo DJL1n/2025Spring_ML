@@ -136,6 +136,8 @@ class Trainer:
         return eval_results
 
 def EnRun(config):
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
     random.seed(config.seed)
     torch.manual_seed(config.seed)
     torch.cuda.manual_seed(config.seed)
@@ -147,29 +149,50 @@ def EnRun(config):
         model = baseline(config).to(device)
     else:
         model = Model(config).to(device)
-    for param in model.data2vec_model.feature_extractor.parameters():
-        param.requires_grad = False
+    # for param in model.data2vec_model.feature_extractor.parameters():
+    #     param.requires_grad = False
 
-    trainer = Trainer(config)
+    trainer = Trainer(config,device)
 
     lowest_eval_loss = 100
     highest_eval_acc = 0
     epoch = 0
     best_epoch = 0
+    prev_loss_model_path = None  # 记录之前基于损失的模型路径
+    prev_acc_model_path = None  # 记录之前基于准确率的模型路径
+
     while True:
         print('---------------------EPOCH: ', epoch, '--------------------')
         epoch += 1
         trainer.do_train(model, train_loader)
         eval_results = trainer.do_test(model, val_loader, "VAL")
-        if eval_results['Loss'] < lowest_eval_loss:
+
+        if eval_results['Loss'] <= lowest_eval_loss:
+            # 如果存在之前的基于损失的模型文件，则删除
+            if prev_loss_model_path and os.path.exists(prev_loss_model_path):
+                os.remove(prev_loss_model_path)
+
+            # 更新最小损失并保存新模型
             lowest_eval_loss = eval_results['Loss']
-            torch.save(model.state_dict(), config.model_save_path + f'RH_loss_{config.dataset_name}_{config.seed}_{lowest_eval_loss}.pth')
-            best_epoch = epoch
+            model_path = config.model_save_path + f'RH_loss_{config.dataset_name}_{config.seed}_{lowest_eval_loss:.4f}.pth'
+            torch.save(model.state_dict(), model_path)
+            prev_loss_model_path = model_path  # 更新路径
+            best_epoch = epoch  # 更新最佳 epoch
+
         if eval_results['Has0_acc_2'] >= highest_eval_acc:
+            # 如果存在之前的基于准确率的模型文件，则删除
+            if prev_acc_model_path and os.path.exists(prev_acc_model_path):
+                os.remove(prev_acc_model_path)
+
+            # 更新最高准确率并保存新模型
             highest_eval_acc = eval_results['Has0_acc_2']
+            model_path = config.model_save_path + f'RH_acc_{config.dataset_name}_{config.seed}_{highest_eval_acc:.4f}.pth'
+            torch.save(model.state_dict(), model_path)
+            prev_acc_model_path = model_path  # 更新路径
             torch.save(model.state_dict(), config.model_save_path + f'RH_acc_{config.dataset_name}_{config.seed}_{highest_eval_acc}.pth')
         if epoch - best_epoch >= config.early_stop:
             break
+
     model.load_state_dict(torch.load(config.model_save_path + f'RH_acc_{config.dataset_name}_{config.seed}_{highest_eval_acc}.pth'))
     test_results_loss = trainer.do_test(model, test_loader, "TEST")
     print('%s: >> ' % ('TEST (highest val acc) ') + dict_to_str(test_results_loss))
