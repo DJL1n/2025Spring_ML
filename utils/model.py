@@ -11,7 +11,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 
 class MultiHeadAttentionFusion(nn.Module):
-    def __init__(self, hidden_dim, nheads):
+    def __init__(self, hidden_dim, nheads=4):
         """
         初始化多头注意力融合模块。
 
@@ -114,8 +114,8 @@ class Model(nn.Module):
             num_attention_heads=self.config.nheads
         )
         self.CME_layers = nn.ModuleList([CMELayer(Bert_config) for _ in range(Bert_config.num_hidden_layers)])
-        self.attention_fusion = AttentionFusion(self.config.dimension)
-
+        # self.attention_fusion = AttentionFusion(self.config.dimension)
+        self.attention_fusion = MultiHeadAttentionFusion(self.config.dimension)
         # 多模态融合输出层
         self.fused_output_layers = nn.Sequential(
             nn.Dropout(config.dropout),
