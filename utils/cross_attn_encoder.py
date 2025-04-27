@@ -240,169 +240,169 @@ class BertLayer(nn.Module):
 ---------------------------------------------------------------------------------------
 """
 
-
-class CMELayer(nn.Module):
-    def __init__(self, config):
-        super().__init__()
-        # The cross-attention Layer
-        self.audio_attention = BertCrossattLayer(config)
-        self.lang_attention = BertCrossattLayer(config)
-        
-        # Self-attention Layers
-        self.lang_self_att = BertSelfattLayer(config)
-        self.audio_self_att = BertSelfattLayer(config)
-
-        # Intermediate and Output Layers (FFNs)
-        self.lang_inter = BertIntermediate(config)
-        self.lang_output = BertOutput(config)
-        self.audio_inter = BertIntermediate(config)
-        self.audio_output = BertOutput(config)
-
-    def cross_att(self, lang_input, lang_attention_mask, audio_input, audio_attention_mask):
-        # Cross Attention
-        lang_att_output = self.lang_attention(lang_input, audio_input, ctx_att_mask=audio_attention_mask)
-        audio_att_output = self.audio_attention(audio_input, lang_input, ctx_att_mask=lang_attention_mask)
-        return lang_att_output, audio_att_output
-
-    def self_att(self, lang_input, lang_attention_mask, audio_input, audio_attention_mask):
-        # Self Attention
-        lang_att_output = self.lang_self_att(lang_input, lang_attention_mask)
-        audio_att_output = self.audio_self_att(audio_input, audio_attention_mask)
-        return lang_att_output, audio_att_output
-
-    def output_fc(self, lang_input, audio_input):
-        # FC layers
-        lang_inter_output = self.lang_inter(lang_input)
-        audio_inter_output = self.audio_inter(audio_input)
-
-        # Layer output
-        lang_output = self.lang_output(lang_inter_output, lang_input)
-        audio_output = self.audio_output(audio_inter_output, audio_input)
-        return lang_output, audio_output
-
-    def forward(self, lang_feats, lang_attention_mask,
-                      audio_feats, audio_attention_mask):
-        
-        lang_att_output = lang_feats
-        audio_att_output = audio_feats
-
-        lang_att_output, audio_att_output = self.cross_att(lang_att_output, lang_attention_mask,
-                                                          audio_att_output, audio_attention_mask)
-        lang_att_output, audio_att_output = self.self_att(lang_att_output, lang_attention_mask,
-                                                         audio_att_output, audio_attention_mask)
-        lang_output, audio_output = self.output_fc(lang_att_output, audio_att_output)
-        
-        return lang_output, audio_output
-
-
-# import torch.nn.functional as F
 #
 # class CMELayer(nn.Module):
 #     def __init__(self, config):
 #         super().__init__()
-#         # 初始化与原始 CMELayer 一致的子模块
+#         # The cross-attention Layer
 #         self.audio_attention = BertCrossattLayer(config)
 #         self.lang_attention = BertCrossattLayer(config)
+#
+#         # Self-attention Layers
 #         self.lang_self_att = BertSelfattLayer(config)
 #         self.audio_self_att = BertSelfattLayer(config)
+#
+#         # Intermediate and Output Layers (FFNs)
 #         self.lang_inter = BertIntermediate(config)
 #         self.lang_output = BertOutput(config)
 #         self.audio_inter = BertIntermediate(config)
 #         self.audio_output = BertOutput(config)
 #
-#         # 协同注意力新增的可学习参数，用于融合注意力图
-#         self.fusion_weight = nn.Parameter(torch.tensor(0.5))  # 初始化为 0.5，表示语言和音频初始贡献相等
-#
-#     def compute_attention_scores(self, query, key, mask=None):
-#         """计算注意力得分并处理掩码
-#         Args:
-#             query: [batch_size, seq_len_q, hidden_size] - 查询向量
-#             key: [batch_size, seq_len_k, hidden_size] - 键向量
-#             mask: [batch_size, seq_len_k] - 注意力掩码
-#         Returns:
-#             attention_probs: [batch_size, seq_len_q, seq_len_k] - 归一化的注意力概率
-#         """
-#         # 计算原始注意力得分
-#         attention_scores = torch.bmm(query, key.transpose(1, 2))  # [batch_size, seq_len_q, seq_len_k]
-#
-#         # 处理掩码，确保不关注填充部分
-#         if mask is not None:
-#             # 扩展掩码维度以匹配注意力得分
-#             mask = mask.unsqueeze(1)  # [batch_size, 1, seq_len_k]
-#             attention_scores = attention_scores.masked_fill(mask == 0, float('-inf'))
-#
-#         # 归一化得到注意力概率
-#         attention_probs = F.softmax(attention_scores, dim=-1)
-#         return attention_probs
-#
-#     def co_attention(self, lang_input, lang_attention_mask, audio_input, audio_attention_mask):
-#         """实现协同注意力机制
-#         Args:
-#             lang_input: [batch_size, lang_seq_len, hidden_size] - 语言特征
-#             lang_attention_mask: [batch_size, lang_seq_len] - 语言掩码
-#             audio_input: [batch_size, audio_seq_len, hidden_size] - 音频特征
-#             audio_attention_mask: [batch_size, audio_seq_len] - 音频掩码
-#         Returns:
-#             lang_output: [batch_size, lang_seq_len, hidden_size] - 更新后的语言特征
-#             audio_output: [batch_size, audio_seq_len, hidden_size] - 更新后的音频特征
-#         """
-#         # 获取维度信息
-#         batch_size, lang_seq_len, hidden_size = lang_input.size()
-#         audio_seq_len = audio_input.size(1)
-#
-#         # 计算语言对音频的注意力
-#         lang_to_audio_attn = self.compute_attention_scores(lang_input, audio_input, audio_attention_mask)
-#         # [batch_size, lang_seq_len, audio_seq_len]
-#
-#         # 计算音频对语言的注意力
-#         audio_to_lang_attn = self.compute_attention_scores(audio_input, lang_input, lang_attention_mask)
-#         # [batch_size, audio_seq_len, lang_seq_len]
-#
-#         # 融合注意力图：使用可学习权重替代简单平均
-#         joint_attn = self.fusion_weight * lang_to_audio_attn + (1 - self.fusion_weight) * audio_to_lang_attn.transpose(1, 2)
-#         # [batch_size, lang_seq_len, audio_seq_len]
-#
-#         # 使用联合注意力图生成加权特征
-#         lang_weighted = torch.bmm(joint_attn, audio_input)  # [batch_size, lang_seq_len, hidden_size]
-#         audio_weighted = torch.bmm(joint_attn.transpose(1, 2), lang_input)  # [batch_size, audio_seq_len, hidden_size]
-#
-#         # 残差连接：结合原始特征，保持信息完整性
-#         lang_output = lang_input + lang_weighted
-#         audio_output = audio_input + audio_weighted
-#
-#         return lang_output, audio_output
+#     def cross_att(self, lang_input, lang_attention_mask, audio_input, audio_attention_mask):
+#         # Cross Attention
+#         lang_att_output = self.lang_attention(lang_input, audio_input, ctx_att_mask=audio_attention_mask)
+#         audio_att_output = self.audio_attention(audio_input, lang_input, ctx_att_mask=lang_attention_mask)
+#         return lang_att_output, audio_att_output
 #
 #     def self_att(self, lang_input, lang_attention_mask, audio_input, audio_attention_mask):
-#         """自注意力层，与原始实现一致"""
+#         # Self Attention
 #         lang_att_output = self.lang_self_att(lang_input, lang_attention_mask)
 #         audio_att_output = self.audio_self_att(audio_input, audio_attention_mask)
 #         return lang_att_output, audio_att_output
 #
 #     def output_fc(self, lang_input, audio_input):
-#         """全连接层输出，与原始实现一致"""
+#         # FC layers
 #         lang_inter_output = self.lang_inter(lang_input)
 #         audio_inter_output = self.audio_inter(audio_input)
+#
+#         # Layer output
 #         lang_output = self.lang_output(lang_inter_output, lang_input)
 #         audio_output = self.audio_output(audio_inter_output, audio_input)
 #         return lang_output, audio_output
 #
-#     covariance = []
-#     def forward(self, lang_feats, lang_attention_mask, audio_feats, audio_attention_mask):
-#         """前向传播，使用协同注意力替代交叉注意力"""
+#     def forward(self, lang_feats, lang_attention_mask,
+#                       audio_feats, audio_attention_mask):
+#
 #         lang_att_output = lang_feats
 #         audio_att_output = audio_feats
 #
-#         # 使用协同注意力处理模态交互
-#         lang_att_output, audio_att_output = self.co_attention(lang_att_output, lang_attention_mask,
-#                                                               audio_att_output, audio_attention_mask)
-#
-#         # 自注意力进一步优化特征
-#         lang_att_output, audio_att_output = self.self_att(lang_att_output, lang_attention_mask,
+#         lang_att_output, audio_att_output = self.cross_att(lang_att_output, lang_attention_mask,
 #                                                           audio_att_output, audio_attention_mask)
-#
-#         # 全连接层生成最终输出
+#         lang_att_output, audio_att_output = self.self_att(lang_att_output, lang_attention_mask,
+#                                                          audio_att_output, audio_attention_mask)
 #         lang_output, audio_output = self.output_fc(lang_att_output, audio_att_output)
 #
 #         return lang_output, audio_output
+
+
+import torch.nn.functional as F
+
+class CMELayer(nn.Module):
+    def __init__(self, config):
+        super().__init__()
+        # 初始化与原始 CMELayer 一致的子模块
+        self.audio_attention = BertCrossattLayer(config)
+        self.lang_attention = BertCrossattLayer(config)
+        self.lang_self_att = BertSelfattLayer(config)
+        self.audio_self_att = BertSelfattLayer(config)
+        self.lang_inter = BertIntermediate(config)
+        self.lang_output = BertOutput(config)
+        self.audio_inter = BertIntermediate(config)
+        self.audio_output = BertOutput(config)
+
+        # 协同注意力新增的可学习参数，用于融合注意力图
+        self.fusion_weight = nn.Parameter(torch.tensor(0.5))  # 初始化为 0.5，表示语言和音频初始贡献相等
+
+    def compute_attention_scores(self, query, key, mask=None):
+        """计算注意力得分并处理掩码
+        Args:
+            query: [batch_size, seq_len_q, hidden_size] - 查询向量
+            key: [batch_size, seq_len_k, hidden_size] - 键向量
+            mask: [batch_size, seq_len_k] - 注意力掩码
+        Returns:
+            attention_probs: [batch_size, seq_len_q, seq_len_k] - 归一化的注意力概率
+        """
+        # 计算原始注意力得分
+        attention_scores = torch.bmm(query, key.transpose(1, 2))  # [batch_size, seq_len_q, seq_len_k]
+
+        # 处理掩码，确保不关注填充部分
+        if mask is not None:
+            # 扩展掩码维度以匹配注意力得分
+            mask = mask.unsqueeze(1)  # [batch_size, 1, seq_len_k]
+            attention_scores = attention_scores.masked_fill(mask == 0, float('-inf'))
+
+        # 归一化得到注意力概率
+        attention_probs = F.softmax(attention_scores, dim=-1)
+        return attention_probs
+
+    def co_attention(self, lang_input, lang_attention_mask, audio_input, audio_attention_mask):
+        """实现协同注意力机制
+        Args:
+            lang_input: [batch_size, lang_seq_len, hidden_size] - 语言特征
+            lang_attention_mask: [batch_size, lang_seq_len] - 语言掩码
+            audio_input: [batch_size, audio_seq_len, hidden_size] - 音频特征
+            audio_attention_mask: [batch_size, audio_seq_len] - 音频掩码
+        Returns:
+            lang_output: [batch_size, lang_seq_len, hidden_size] - 更新后的语言特征
+            audio_output: [batch_size, audio_seq_len, hidden_size] - 更新后的音频特征
+        """
+        # 获取维度信息
+        batch_size, lang_seq_len, hidden_size = lang_input.size()
+        audio_seq_len = audio_input.size(1)
+
+        # 计算语言对音频的注意力
+        lang_to_audio_attn = self.compute_attention_scores(lang_input, audio_input, audio_attention_mask)
+        # [batch_size, lang_seq_len, audio_seq_len]
+
+        # 计算音频对语言的注意力
+        audio_to_lang_attn = self.compute_attention_scores(audio_input, lang_input, lang_attention_mask)
+        # [batch_size, audio_seq_len, lang_seq_len]
+
+        # 融合注意力图：使用可学习权重替代简单平均
+        joint_attn = self.fusion_weight * lang_to_audio_attn + (1 - self.fusion_weight) * audio_to_lang_attn.transpose(1, 2)
+        # [batch_size, lang_seq_len, audio_seq_len]
+
+        # 使用联合注意力图生成加权特征
+        lang_weighted = torch.bmm(joint_attn, audio_input)  # [batch_size, lang_seq_len, hidden_size]
+        audio_weighted = torch.bmm(joint_attn.transpose(1, 2), lang_input)  # [batch_size, audio_seq_len, hidden_size]
+
+        # 残差连接：结合原始特征，保持信息完整性
+        lang_output = lang_input + lang_weighted
+        audio_output = audio_input + audio_weighted
+
+        return lang_output, audio_output
+
+    def self_att(self, lang_input, lang_attention_mask, audio_input, audio_attention_mask):
+        """自注意力层，与原始实现一致"""
+        lang_att_output = self.lang_self_att(lang_input, lang_attention_mask)
+        audio_att_output = self.audio_self_att(audio_input, audio_attention_mask)
+        return lang_att_output, audio_att_output
+
+    def output_fc(self, lang_input, audio_input):
+        """全连接层输出，与原始实现一致"""
+        lang_inter_output = self.lang_inter(lang_input)
+        audio_inter_output = self.audio_inter(audio_input)
+        lang_output = self.lang_output(lang_inter_output, lang_input)
+        audio_output = self.audio_output(audio_inter_output, audio_input)
+        return lang_output, audio_output
+
+    covariance = []
+    def forward(self, lang_feats, lang_attention_mask, audio_feats, audio_attention_mask):
+        """前向传播，使用协同注意力替代交叉注意力"""
+        lang_att_output = lang_feats
+        audio_att_output = audio_feats
+
+        # 使用协同注意力处理模态交互
+        lang_att_output, audio_att_output = self.co_attention(lang_att_output, lang_attention_mask,
+                                                              audio_att_output, audio_attention_mask)
+
+        # 自注意力进一步优化特征
+        lang_att_output, audio_att_output = self.self_att(lang_att_output, lang_attention_mask,
+                                                          audio_att_output, audio_attention_mask)
+
+        # 全连接层生成最终输出
+        lang_output, audio_output = self.output_fc(lang_att_output, audio_att_output)
+
+        return lang_output, audio_output
 
     
