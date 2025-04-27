@@ -1,5 +1,6 @@
 # utils/train.py
 import torch
+import os
 from torch import nn
 from tqdm import tqdm
 from utils.metricsTop import MetricsTop
@@ -29,8 +30,6 @@ class Trainer:
         model.train()
         optimizer = torch.optim.AdamW(model.parameters(), lr=self.config.learning_rate)
 
-        accumulation_steps = self.config.gradient_accumulation_steps
-
         total_loss = 0.0
         optimizer.zero_grad()  # 在训练循环开始前清零梯度
 
@@ -58,24 +57,10 @@ class Trainer:
             for m in self.tasks:
                 sub_loss = self.config.loss_weights[m] * self.criterion(outputs[m], targets)
                 loss += sub_loss
-            # 缩放损失以保持梯度幅度一致
-            total_loss_batch = total_loss_batch / accumulation_steps
-
-            # 反向传播，累积梯度
-            total_loss_batch.backward()
-
-            # 累积总损失（还原缩放效果）
-            total_loss += total_loss_batch.item() * accumulation_steps * text_inputs.size(0)
-
-            # 当达到累积步数时，更新参数并清零梯度
-            if (i + 1) % accumulation_steps == 0:
-                optimizer.step()
-                optimizer.zero_grad()
-
-        # 处理训练循环末尾的剩余梯度
-        if len(data_loader) % accumulation_steps != 0:
+            #                 train_loss[m] += sub_loss.item()*text_inputs.size(0)
+            total_loss += loss.item() * text_inputs.size(0)
+            loss.backward()
             optimizer.step()
-            optimizer.zero_grad()
 
         total_loss = round(total_loss / len(data_loader.dataset), 4)
         return total_loss
@@ -152,7 +137,7 @@ def EnRun(config):
     # for param in model.data2vec_model.feature_extractor.parameters():
     #     param.requires_grad = False
 
-    trainer = Trainer(config,device)
+    trainer = Trainer(config)
 
     lowest_eval_loss = 100
     highest_eval_acc = 0

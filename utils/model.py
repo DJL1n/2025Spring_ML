@@ -9,6 +9,52 @@ import math
 # 设备设置
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
+
+class MultiHeadAttentionFusion(nn.Module):
+    def __init__(self, hidden_dim, nheads):
+        """
+        初始化多头注意力融合模块。
+
+        参数：
+            hidden_dim (int): 隐藏层维度（例如 768）。
+            nheads (int): 注意力头的数量。
+        """
+        super().__init__()
+        # 初始化多头注意力模块
+        self.multihead_attn = nn.MultiheadAttention(
+            embed_dim=hidden_dim,
+            num_heads=nheads,
+            dropout=0.0  # 与原始代码保持一致，不使用 dropout
+        )
+
+    def forward(self, cls_tokens):
+        """
+        前向传播，融合 CLS 标记。
+
+        参数：
+            cls_tokens (torch.Tensor): 输入的 CLS 标记，形状为 [batch_size, 4, hidden_dim]
+
+        返回：
+            torch.Tensor: 融合后的表示，形状为 [batch_size, hidden_dim]
+        """
+        # 计算全局上下文（CLS 标记的平均值）
+        context = torch.mean(cls_tokens, dim=1)  # [batch_size, hidden_dim]
+
+        # 准备多头注意力的输入
+        query = context.unsqueeze(0)  # [1, batch_size, hidden_dim]
+        key = cls_tokens.permute(1, 0, 2)  # [4, batch_size, hidden_dim]
+        value = key  # 键和值相同，[4, batch_size, hidden_dim]
+
+        # 计算多头注意力
+        attn_output, _ = self.multihead_attn(query, key, value)  # attn_output: [1, batch_size, hidden_dim]
+        fused = attn_output.squeeze(0)  # [batch_size, hidden_dim]
+
+        # 添加残差连接
+        residual = context  # [batch_size, hidden_dim]
+        fused_with_residual = fused + residual  # [batch_size, hidden_dim]
+
+        return fused_with_residual
+
 class AttentionFusion(nn.Module):
     def __init__(self, hidden_dim):
         super().__init__()
@@ -44,7 +90,7 @@ class Model(nn.Module):
         self.config = config
 
         # 预训练模型加载
-        self.roberta_model = RobertaModel.from_pretrained('roberta-large')
+        self.roberta_model = RobertaModel.from_pretrained('siebert/sentiment-roberta-large-english')
         self.data2vec_model = Data2VecAudioModel.from_pretrained("facebook/data2vec-audio-large-960h")
         # 文本和音频输出层
         self.T_output_layers = nn.Sequential(
