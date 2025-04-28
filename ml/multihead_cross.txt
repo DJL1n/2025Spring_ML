@@ -1,0 +1,290 @@
+---------------------EPOCH:  0 --------------------
+VAL >> loss:  3.515    M_loss:  1.424   T_loss:  0.6687   A_loss:  1.4223
+M: >>  Has0_acc_2: 0.8472  Has0_F1_score: 0.8473  Non0_acc_2: 0.8611  Non0_F1_score: 0.8607  Mult_acc_5: 0.4978  Mult_acc_7: 0.2838  MAE: 0.9494  Corr: 0.7991 
+T: >>  Has0_acc_2: 0.8559  Has0_F1_score: 0.8560  Non0_acc_2: 0.8750  Non0_F1_score: 0.8745  Mult_acc_5: 0.5852  Mult_acc_7: 0.4672  MAE: 0.6687  Corr: 0.8410 
+A: >>  Has0_acc_2: 0.5983  Has0_F1_score: 0.4479  Non0_acc_2: 0.5741  Non0_F1_score: 0.4187  Mult_acc_5: 0.2140  Mult_acc_7: 0.2140  MAE: 1.4223  Corr: -0.0317 
+---------------------EPOCH:  1 --------------------
+VAL >> loss:  3.5051    M_loss:  1.4333   T_loss:  0.6582   A_loss:  1.4136
+M: >>  Has0_acc_2: 0.8515  Has0_F1_score: 0.8503  Non0_acc_2: 0.8657  Non0_F1_score: 0.8640  Mult_acc_5: 0.4803  Mult_acc_7: 0.3100  MAE: 0.9556  Corr: 0.8240 
+T: >>  Has0_acc_2: 0.8472  Has0_F1_score: 0.8484  Non0_acc_2: 0.8750  Non0_F1_score: 0.8754  Mult_acc_5: 0.5852  Mult_acc_7: 0.4672  MAE: 0.6582  Corr: 0.8508 
+A: >>  Has0_acc_2: 0.5983  Has0_F1_score: 0.4479  Non0_acc_2: 0.5741  Non0_F1_score: 0.4187  Mult_acc_5: 0.2052  Mult_acc_7: 0.2052  MAE: 1.4136  Corr: 0.0565 
+---------------------EPOCH:  2 --------------------
+VAL >> loss:  3.3367    M_loss:  1.2403   T_loss:  0.6639   A_loss:  1.4325
+M: >>  Has0_acc_2: 0.8472  Has0_F1_score: 0.8460  Non0_acc_2: 0.8657  Non0_F1_score: 0.8640  Mult_acc_5: 0.5371  Mult_acc_7: 0.3974  MAE: 0.8269  Corr: 0.8174 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8605  Non0_acc_2: 0.8843  Non0_F1_score: 0.8838  Mult_acc_5: 0.5983  Mult_acc_7: 0.4803  MAE: 0.6639  Corr: 0.8332 
+A: >>  Has0_acc_2: 0.5197  Has0_F1_score: 0.4966  Non0_acc_2: 0.5046  Non0_F1_score: 0.4796  Mult_acc_5: 0.2052  Mult_acc_7: 0.2052  MAE: 1.4325  Corr: 0.0362 
+---------------------EPOCH:  3 --------------------
+VAL >> loss:  3.3719    M_loss:  1.2873   T_loss:  0.641   A_loss:  1.4436
+M: >>  Has0_acc_2: 0.8559  Has0_F1_score: 0.8555  Non0_acc_2: 0.8750  Non0_F1_score: 0.8740  Mult_acc_5: 0.5459  Mult_acc_7: 0.3100  MAE: 0.8582  Corr: 0.8273 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8652  Non0_acc_2: 0.8935  Non0_F1_score: 0.8933  Mult_acc_5: 0.6114  Mult_acc_7: 0.4978  MAE: 0.6410  Corr: 0.8394 
+A: >>  Has0_acc_2: 0.5502  Has0_F1_score: 0.5275  Non0_acc_2: 0.5463  Non0_F1_score: 0.5199  Mult_acc_5: 0.1965  Mult_acc_7: 0.1965  MAE: 1.4436  Corr: 0.0361 
+---------------------EPOCH:  4 --------------------
+VAL >> loss:  3.4704    M_loss:  1.3355   T_loss:  0.6507   A_loss:  1.4841
+M: >>  Has0_acc_2: 0.8384  Has0_F1_score: 0.8376  Non0_acc_2: 0.8565  Non0_F1_score: 0.8550  Mult_acc_5: 0.5371  Mult_acc_7: 0.3406  MAE: 0.8904  Corr: 0.8282 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8605  Non0_acc_2: 0.8843  Non0_F1_score: 0.8838  Mult_acc_5: 0.6201  Mult_acc_7: 0.4847  MAE: 0.6507  Corr: 0.8463 
+A: >>  Has0_acc_2: 0.5633  Has0_F1_score: 0.5560  Non0_acc_2: 0.5556  Non0_F1_score: 0.5465  Mult_acc_5: 0.1965  Mult_acc_7: 0.1921  MAE: 1.4841  Corr: 0.0556 
+---------------------EPOCH:  5 --------------------
+VAL >> loss:  3.5543    M_loss:  1.4452   T_loss:  0.6548   A_loss:  1.4543
+M: >>  Has0_acc_2: 0.8428  Has0_F1_score: 0.8418  Non0_acc_2: 0.8611  Non0_F1_score: 0.8595  Mult_acc_5: 0.5502  Mult_acc_7: 0.3100  MAE: 0.9634  Corr: 0.8291 
+T: >>  Has0_acc_2: 0.8515  Has0_F1_score: 0.8518  Non0_acc_2: 0.8750  Non0_F1_score: 0.8745  Mult_acc_5: 0.5939  Mult_acc_7: 0.4672  MAE: 0.6548  Corr: 0.8429 
+A: >>  Has0_acc_2: 0.5502  Has0_F1_score: 0.5419  Non0_acc_2: 0.5370  Non0_F1_score: 0.5276  Mult_acc_5: 0.2227  Mult_acc_7: 0.2140  MAE: 1.4543  Corr: 0.1012 
+---------------------EPOCH:  6 --------------------
+VAL >> loss:  3.5554    M_loss:  1.3589   T_loss:  0.6546   A_loss:  1.5419
+M: >>  Has0_acc_2: 0.8559  Has0_F1_score: 0.8565  Non0_acc_2: 0.8750  Non0_F1_score: 0.8749  Mult_acc_5: 0.5415  Mult_acc_7: 0.3275  MAE: 0.9060  Corr: 0.8441 
+T: >>  Has0_acc_2: 0.8559  Has0_F1_score: 0.8566  Non0_acc_2: 0.8843  Non0_F1_score: 0.8842  Mult_acc_5: 0.6070  Mult_acc_7: 0.4672  MAE: 0.6546  Corr: 0.8528 
+A: >>  Has0_acc_2: 0.5633  Has0_F1_score: 0.5616  Non0_acc_2: 0.5648  Non0_F1_score: 0.5607  Mult_acc_5: 0.2489  Mult_acc_7: 0.2227  MAE: 1.5419  Corr: 0.0646 
+---------------------EPOCH:  7 --------------------
+VAL >> loss:  3.2221    M_loss:  1.0642   T_loss:  0.6285   A_loss:  1.5295
+M: >>  Has0_acc_2: 0.8559  Has0_F1_score: 0.8563  Non0_acc_2: 0.8750  Non0_F1_score: 0.8747  Mult_acc_5: 0.6026  Mult_acc_7: 0.4454  MAE: 0.7094  Corr: 0.8539 
+T: >>  Has0_acc_2: 0.8515  Has0_F1_score: 0.8528  Non0_acc_2: 0.8796  Non0_F1_score: 0.8800  Mult_acc_5: 0.6070  Mult_acc_7: 0.4803  MAE: 0.6285  Corr: 0.8595 
+A: >>  Has0_acc_2: 0.5764  Has0_F1_score: 0.5760  Non0_acc_2: 0.5787  Non0_F1_score: 0.5762  Mult_acc_5: 0.2533  Mult_acc_7: 0.2227  MAE: 1.5295  Corr: 0.1517 
+---------------------EPOCH:  8 --------------------
+VAL >> loss:  3.5089    M_loss:  1.2931   T_loss:  0.6944   A_loss:  1.5214
+M: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8692  Non0_acc_2: 0.8889  Non0_F1_score: 0.8885  Mult_acc_5: 0.5633  Mult_acc_7: 0.3581  MAE: 0.8621  Corr: 0.8451 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8609  Non0_acc_2: 0.8843  Non0_F1_score: 0.8842  Mult_acc_5: 0.5983  Mult_acc_7: 0.4410  MAE: 0.6944  Corr: 0.8514 
+A: >>  Has0_acc_2: 0.5852  Has0_F1_score: 0.5873  Non0_acc_2: 0.5926  Non0_F1_score: 0.5926  Mult_acc_5: 0.2576  Mult_acc_7: 0.2314  MAE: 1.5214  Corr: 0.1430 
+---------------------EPOCH:  9 --------------------
+VAL >> loss:  3.3171    M_loss:  1.1185   T_loss:  0.6312   A_loss:  1.5675
+M: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8645  Non0_acc_2: 0.8843  Non0_F1_score: 0.8836  Mult_acc_5: 0.6070  Mult_acc_7: 0.4148  MAE: 0.7457  Corr: 0.8533 
+T: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8690  Non0_acc_2: 0.8935  Non0_F1_score: 0.8929  Mult_acc_5: 0.6288  Mult_acc_7: 0.4891  MAE: 0.6312  Corr: 0.8603 
+A: >>  Has0_acc_2: 0.6245  Has0_F1_score: 0.6203  Non0_acc_2: 0.6296  Non0_F1_score: 0.6232  Mult_acc_5: 0.2751  Mult_acc_7: 0.2183  MAE: 1.5675  Corr: 0.1992 
+---------------------EPOCH:  10 --------------------
+VAL >> loss:  3.1716    M_loss:  1.0711   T_loss:  0.637   A_loss:  1.4635
+M: >>  Has0_acc_2: 0.8515  Has0_F1_score: 0.8522  Non0_acc_2: 0.8750  Non0_F1_score: 0.8749  Mult_acc_5: 0.5808  Mult_acc_7: 0.4323  MAE: 0.7141  Corr: 0.8506 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8614  Non0_acc_2: 0.8935  Non0_F1_score: 0.8938  Mult_acc_5: 0.6201  Mult_acc_7: 0.4847  MAE: 0.6370  Corr: 0.8535 
+A: >>  Has0_acc_2: 0.6332  Has0_F1_score: 0.6270  Non0_acc_2: 0.6389  Non0_F1_score: 0.6303  Mult_acc_5: 0.2751  Mult_acc_7: 0.2402  MAE: 1.4635  Corr: 0.2256 
+---------------------EPOCH:  11 --------------------
+VAL >> loss:  3.3045    M_loss:  1.1728   T_loss:  0.6236   A_loss:  1.5081
+M: >>  Has0_acc_2: 0.8472  Has0_F1_score: 0.8475  Non0_acc_2: 0.8657  Non0_F1_score: 0.8654  Mult_acc_5: 0.5852  Mult_acc_7: 0.4148  MAE: 0.7819  Corr: 0.8565 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8655  Non0_acc_2: 0.8935  Non0_F1_score: 0.8936  Mult_acc_5: 0.6070  Mult_acc_7: 0.4760  MAE: 0.6236  Corr: 0.8645 
+A: >>  Has0_acc_2: 0.6157  Has0_F1_score: 0.6142  Non0_acc_2: 0.6296  Non0_F1_score: 0.6253  Mult_acc_5: 0.3013  Mult_acc_7: 0.2489  MAE: 1.5081  Corr: 0.2084 
+---------------------EPOCH:  12 --------------------
+VAL >> loss:  3.3216    M_loss:  1.2271   T_loss:  0.6464   A_loss:  1.4481
+M: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8690  Non0_acc_2: 0.8889  Non0_F1_score: 0.8883  Mult_acc_5: 0.5677  Mult_acc_7: 0.3930  MAE: 0.8180  Corr: 0.8548 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8611  Non0_acc_2: 0.8889  Non0_F1_score: 0.8889  Mult_acc_5: 0.5895  Mult_acc_7: 0.4585  MAE: 0.6464  Corr: 0.8592 
+A: >>  Has0_acc_2: 0.6725  Has0_F1_score: 0.6643  Non0_acc_2: 0.6759  Non0_F1_score: 0.6659  Mult_acc_5: 0.2969  Mult_acc_7: 0.2445  MAE: 1.4481  Corr: 0.2688 
+---------------------EPOCH:  13 --------------------
+VAL >> loss:  3.1574    M_loss:  1.0937   T_loss:  0.611   A_loss:  1.4527
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8607  Non0_acc_2: 0.8889  Non0_F1_score: 0.8885  Mult_acc_5: 0.5895  Mult_acc_7: 0.4367  MAE: 0.7292  Corr: 0.8548 
+T: >>  Has0_acc_2: 0.8734  Has0_F1_score: 0.8737  Non0_acc_2: 0.8981  Non0_F1_score: 0.8978  Mult_acc_5: 0.6114  Mult_acc_7: 0.4891  MAE: 0.6110  Corr: 0.8581 
+A: >>  Has0_acc_2: 0.6070  Has0_F1_score: 0.6107  Non0_acc_2: 0.6296  Non0_F1_score: 0.6312  Mult_acc_5: 0.2576  Mult_acc_7: 0.2314  MAE: 1.4527  Corr: 0.2386 
+---------------------EPOCH:  14 --------------------
+VAL >> loss:  3.127    M_loss:  1.1068   T_loss:  0.6206   A_loss:  1.3996
+M: >>  Has0_acc_2: 0.8515  Has0_F1_score: 0.8524  Non0_acc_2: 0.8796  Non0_F1_score: 0.8796  Mult_acc_5: 0.5764  Mult_acc_7: 0.4323  MAE: 0.7379  Corr: 0.8575 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8609  Non0_acc_2: 0.8843  Non0_F1_score: 0.8842  Mult_acc_5: 0.6070  Mult_acc_7: 0.4847  MAE: 0.6206  Corr: 0.8611 
+A: >>  Has0_acc_2: 0.6507  Has0_F1_score: 0.6477  Non0_acc_2: 0.6667  Non0_F1_score: 0.6609  Mult_acc_5: 0.2926  Mult_acc_7: 0.2533  MAE: 1.3996  Corr: 0.3183 
+---------------------EPOCH:  15 --------------------
+VAL >> loss:  2.9707    M_loss:  0.9443   T_loss:  0.6023   A_loss:  1.4241
+M: >>  Has0_acc_2: 0.8472  Has0_F1_score: 0.8483  Non0_acc_2: 0.8750  Non0_F1_score: 0.8752  Mult_acc_5: 0.6070  Mult_acc_7: 0.4629  MAE: 0.6295  Corr: 0.8584 
+T: >>  Has0_acc_2: 0.8559  Has0_F1_score: 0.8566  Non0_acc_2: 0.8843  Non0_F1_score: 0.8842  Mult_acc_5: 0.6026  Mult_acc_7: 0.4760  MAE: 0.6023  Corr: 0.8639 
+A: >>  Has0_acc_2: 0.6026  Has0_F1_score: 0.6063  Non0_acc_2: 0.6250  Non0_F1_score: 0.6271  Mult_acc_5: 0.2620  Mult_acc_7: 0.2183  MAE: 1.4241  Corr: 0.3011 
+---------------------EPOCH:  16 --------------------
+VAL >> loss:  3.214    M_loss:  1.2076   T_loss:  0.6534   A_loss:  1.3529
+M: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8656  Non0_acc_2: 0.8935  Non0_F1_score: 0.8937  Mult_acc_5: 0.5459  Mult_acc_7: 0.3799  MAE: 0.8051  Corr: 0.8588 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8657  Non0_acc_2: 0.8935  Non0_F1_score: 0.8938  Mult_acc_5: 0.5546  Mult_acc_7: 0.4410  MAE: 0.6534  Corr: 0.8576 
+A: >>  Has0_acc_2: 0.6288  Has0_F1_score: 0.6323  Non0_acc_2: 0.6528  Non0_F1_score: 0.6547  Mult_acc_5: 0.2664  Mult_acc_7: 0.2314  MAE: 1.3529  Corr: 0.3455 
+---------------------EPOCH:  17 --------------------
+VAL >> loss:  3.1712    M_loss:  1.1646   T_loss:  0.6285   A_loss:  1.3781
+M: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8692  Non0_acc_2: 0.8981  Non0_F1_score: 0.8976  Mult_acc_5: 0.5852  Mult_acc_7: 0.4454  MAE: 0.7764  Corr: 0.8587 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8655  Non0_acc_2: 0.8935  Non0_F1_score: 0.8936  Mult_acc_5: 0.6157  Mult_acc_7: 0.4978  MAE: 0.6285  Corr: 0.8612 
+A: >>  Has0_acc_2: 0.6769  Has0_F1_score: 0.6724  Non0_acc_2: 0.6806  Non0_F1_score: 0.6745  Mult_acc_5: 0.3057  Mult_acc_7: 0.2445  MAE: 1.3781  Corr: 0.3713 
+---------------------EPOCH:  18 --------------------
+VAL >> loss:  3.2698    M_loss:  1.3009   T_loss:  0.6594   A_loss:  1.3095
+M: >>  Has0_acc_2: 0.8515  Has0_F1_score: 0.8506  Non0_acc_2: 0.8704  Non0_F1_score: 0.8688  Mult_acc_5: 0.5677  Mult_acc_7: 0.3668  MAE: 0.8673  Corr: 0.8519 
+T: >>  Has0_acc_2: 0.8559  Has0_F1_score: 0.8558  Non0_acc_2: 0.8796  Non0_F1_score: 0.8788  Mult_acc_5: 0.6026  Mult_acc_7: 0.4803  MAE: 0.6594  Corr: 0.8530 
+A: >>  Has0_acc_2: 0.6463  Has0_F1_score: 0.6489  Non0_acc_2: 0.6667  Non0_F1_score: 0.6671  Mult_acc_5: 0.3406  Mult_acc_7: 0.2882  MAE: 1.3095  Corr: 0.3899 
+---------------------EPOCH:  19 --------------------
+VAL >> loss:  2.8446    M_loss:  0.9635   T_loss:  0.6072   A_loss:  1.2739
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8603  Non0_acc_2: 0.8843  Non0_F1_score: 0.8836  Mult_acc_5: 0.6157  Mult_acc_7: 0.4978  MAE: 0.6423  Corr: 0.8633 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8611  Non0_acc_2: 0.8889  Non0_F1_score: 0.8889  Mult_acc_5: 0.6157  Mult_acc_7: 0.5022  MAE: 0.6072  Corr: 0.8669 
+A: >>  Has0_acc_2: 0.6638  Has0_F1_score: 0.6628  Non0_acc_2: 0.6759  Non0_F1_score: 0.6729  Mult_acc_5: 0.3319  Mult_acc_7: 0.2926  MAE: 1.2739  Corr: 0.4185 
+---------------------EPOCH:  20 --------------------
+VAL >> loss:  2.9112    M_loss:  0.9824   T_loss:  0.6172   A_loss:  1.3116
+M: >>  Has0_acc_2: 0.8559  Has0_F1_score: 0.8565  Non0_acc_2: 0.8843  Non0_F1_score: 0.8840  Mult_acc_5: 0.6026  Mult_acc_7: 0.4847  MAE: 0.6550  Corr: 0.8617 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8609  Non0_acc_2: 0.8889  Non0_F1_score: 0.8887  Mult_acc_5: 0.6026  Mult_acc_7: 0.4934  MAE: 0.6172  Corr: 0.8604 
+A: >>  Has0_acc_2: 0.6769  Has0_F1_score: 0.6763  Non0_acc_2: 0.6991  Non0_F1_score: 0.6959  Mult_acc_5: 0.2969  Mult_acc_7: 0.2314  MAE: 1.3116  Corr: 0.4206 
+---------------------EPOCH:  21 --------------------
+VAL >> loss:  3.0192    M_loss:  1.0743   T_loss:  0.6383   A_loss:  1.3066
+M: >>  Has0_acc_2: 0.8515  Has0_F1_score: 0.8522  Non0_acc_2: 0.8843  Non0_F1_score: 0.8840  Mult_acc_5: 0.5808  Mult_acc_7: 0.4672  MAE: 0.7162  Corr: 0.8556 
+T: >>  Has0_acc_2: 0.8515  Has0_F1_score: 0.8527  Non0_acc_2: 0.8796  Non0_F1_score: 0.8799  Mult_acc_5: 0.5764  Mult_acc_7: 0.4672  MAE: 0.6383  Corr: 0.8562 
+A: >>  Has0_acc_2: 0.6507  Has0_F1_score: 0.6448  Non0_acc_2: 0.6574  Non0_F1_score: 0.6493  Mult_acc_5: 0.3100  Mult_acc_7: 0.2489  MAE: 1.3066  Corr: 0.3956 
+---------------------EPOCH:  22 --------------------
+VAL >> loss:  2.8849    M_loss:  0.9671   T_loss:  0.6099   A_loss:  1.3079
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8612  Non0_acc_2: 0.8935  Non0_F1_score: 0.8936  Mult_acc_5: 0.5808  Mult_acc_7: 0.4672  MAE: 0.6448  Corr: 0.8567 
+T: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8699  Non0_acc_2: 0.8981  Non0_F1_score: 0.8983  Mult_acc_5: 0.6114  Mult_acc_7: 0.5066  MAE: 0.6099  Corr: 0.8599 
+A: >>  Has0_acc_2: 0.6725  Has0_F1_score: 0.6749  Non0_acc_2: 0.6898  Non0_F1_score: 0.6904  Mult_acc_5: 0.3057  Mult_acc_7: 0.2271  MAE: 1.3079  Corr: 0.4166 
+---------------------EPOCH:  23 --------------------
+VAL >> loss:  2.8971    M_loss:  0.9781   T_loss:  0.6222   A_loss:  1.2969
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8609  Non0_acc_2: 0.8889  Non0_F1_score: 0.8887  Mult_acc_5: 0.5852  Mult_acc_7: 0.4803  MAE: 0.6521  Corr: 0.8583 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8611  Non0_acc_2: 0.8889  Non0_F1_score: 0.8889  Mult_acc_5: 0.5983  Mult_acc_7: 0.4978  MAE: 0.6222  Corr: 0.8579 
+A: >>  Has0_acc_2: 0.6550  Has0_F1_score: 0.6533  Non0_acc_2: 0.6713  Non0_F1_score: 0.6670  Mult_acc_5: 0.3275  Mult_acc_7: 0.2533  MAE: 1.2969  Corr: 0.4334 
+---------------------EPOCH:  24 --------------------
+VAL >> loss:  3.0061    M_loss:  1.0571   T_loss:  0.6278   A_loss:  1.3212
+M: >>  Has0_acc_2: 0.8515  Has0_F1_score: 0.8513  Non0_acc_2: 0.8750  Non0_F1_score: 0.8740  Mult_acc_5: 0.6026  Mult_acc_7: 0.4891  MAE: 0.7047  Corr: 0.8585 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8652  Non0_acc_2: 0.8935  Non0_F1_score: 0.8933  Mult_acc_5: 0.6114  Mult_acc_7: 0.5109  MAE: 0.6278  Corr: 0.8618 
+A: >>  Has0_acc_2: 0.6638  Has0_F1_score: 0.6596  Non0_acc_2: 0.6759  Non0_F1_score: 0.6693  Mult_acc_5: 0.3406  Mult_acc_7: 0.2664  MAE: 1.3212  Corr: 0.4234 
+---------------------EPOCH:  25 --------------------
+VAL >> loss:  2.9845    M_loss:  1.0776   T_loss:  0.638   A_loss:  1.269
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8603  Non0_acc_2: 0.8843  Non0_F1_score: 0.8836  Mult_acc_5: 0.5721  Mult_acc_7: 0.4541  MAE: 0.7184  Corr: 0.8509 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8607  Non0_acc_2: 0.8843  Non0_F1_score: 0.8840  Mult_acc_5: 0.5939  Mult_acc_7: 0.4847  MAE: 0.6380  Corr: 0.8574 
+A: >>  Has0_acc_2: 0.6332  Has0_F1_score: 0.6353  Non0_acc_2: 0.6389  Non0_F1_score: 0.6394  Mult_acc_5: 0.3188  Mult_acc_7: 0.2576  MAE: 1.2690  Corr: 0.4143 
+---------------------EPOCH:  26 --------------------
+VAL >> loss:  2.8279    M_loss:  0.9626   T_loss:  0.618   A_loss:  1.2473
+M: >>  Has0_acc_2: 0.8472  Has0_F1_score: 0.8475  Non0_acc_2: 0.8750  Non0_F1_score: 0.8745  Mult_acc_5: 0.6157  Mult_acc_7: 0.5066  MAE: 0.6417  Corr: 0.8569 
+T: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8698  Non0_acc_2: 0.8981  Non0_F1_score: 0.8981  Mult_acc_5: 0.5852  Mult_acc_7: 0.4934  MAE: 0.6180  Corr: 0.8550 
+A: >>  Has0_acc_2: 0.6507  Has0_F1_score: 0.6536  Non0_acc_2: 0.6667  Non0_F1_score: 0.6678  Mult_acc_5: 0.3668  Mult_acc_7: 0.3188  MAE: 1.2473  Corr: 0.4066 
+---------------------EPOCH:  27 --------------------
+VAL >> loss:  2.9151    M_loss:  1.026   T_loss:  0.6198   A_loss:  1.2692
+M: >>  Has0_acc_2: 0.8515  Has0_F1_score: 0.8522  Non0_acc_2: 0.8796  Non0_F1_score: 0.8794  Mult_acc_5: 0.6157  Mult_acc_7: 0.4934  MAE: 0.6840  Corr: 0.8532 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8653  Non0_acc_2: 0.8935  Non0_F1_score: 0.8934  Mult_acc_5: 0.6245  Mult_acc_7: 0.5240  MAE: 0.6198  Corr: 0.8510 
+A: >>  Has0_acc_2: 0.6550  Has0_F1_score: 0.6525  Non0_acc_2: 0.6620  Non0_F1_score: 0.6576  Mult_acc_5: 0.3100  Mult_acc_7: 0.2576  MAE: 1.2692  Corr: 0.4167 
+---------------------EPOCH:  28 --------------------
+VAL >> loss:  2.8794    M_loss:  0.9609   T_loss:  0.6217   A_loss:  1.2968
+M: >>  Has0_acc_2: 0.8472  Has0_F1_score: 0.8464  Non0_acc_2: 0.8611  Non0_F1_score: 0.8598  Mult_acc_5: 0.6026  Mult_acc_7: 0.5109  MAE: 0.6406  Corr: 0.8579 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8609  Non0_acc_2: 0.8889  Non0_F1_score: 0.8887  Mult_acc_5: 0.6201  Mult_acc_7: 0.5415  MAE: 0.6217  Corr: 0.8549 
+A: >>  Has0_acc_2: 0.6463  Has0_F1_score: 0.6398  Non0_acc_2: 0.6574  Non0_F1_score: 0.6481  Mult_acc_5: 0.3362  Mult_acc_7: 0.2707  MAE: 1.2968  Corr: 0.4055 
+---------------------EPOCH:  29 --------------------
+VAL >> loss:  2.8343    M_loss:  0.9432   T_loss:  0.5972   A_loss:  1.2939
+M: >>  Has0_acc_2: 0.8515  Has0_F1_score: 0.8518  Non0_acc_2: 0.8796  Non0_F1_score: 0.8790  Mult_acc_5: 0.6201  Mult_acc_7: 0.5109  MAE: 0.6288  Corr: 0.8576 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8609  Non0_acc_2: 0.8889  Non0_F1_score: 0.8887  Mult_acc_5: 0.6201  Mult_acc_7: 0.5197  MAE: 0.5972  Corr: 0.8579 
+A: >>  Has0_acc_2: 0.6157  Has0_F1_score: 0.6179  Non0_acc_2: 0.6296  Non0_F1_score: 0.6296  Mult_acc_5: 0.3057  Mult_acc_7: 0.2707  MAE: 1.2939  Corr: 0.3885 
+---------------------EPOCH:  30 --------------------
+VAL >> loss:  2.8623    M_loss:  0.9396   T_loss:  0.6228   A_loss:  1.2999
+M: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8650  Non0_acc_2: 0.8889  Non0_F1_score: 0.8885  Mult_acc_5: 0.6201  Mult_acc_7: 0.5284  MAE: 0.6264  Corr: 0.8631 
+T: >>  Has0_acc_2: 0.8559  Has0_F1_score: 0.8565  Non0_acc_2: 0.8843  Non0_F1_score: 0.8840  Mult_acc_5: 0.5895  Mult_acc_7: 0.5066  MAE: 0.6228  Corr: 0.8596 
+A: >>  Has0_acc_2: 0.6288  Has0_F1_score: 0.6324  Non0_acc_2: 0.6481  Non0_F1_score: 0.6500  Mult_acc_5: 0.3450  Mult_acc_7: 0.2926  MAE: 1.2999  Corr: 0.3797 
+---------------------EPOCH:  31 --------------------
+VAL >> loss:  2.8154    M_loss:  0.9326   T_loss:  0.6106   A_loss:  1.2723
+M: >>  Has0_acc_2: 0.8559  Has0_F1_score: 0.8563  Non0_acc_2: 0.8843  Non0_F1_score: 0.8838  Mult_acc_5: 0.6201  Mult_acc_7: 0.5284  MAE: 0.6217  Corr: 0.8637 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8653  Non0_acc_2: 0.8935  Non0_F1_score: 0.8934  Mult_acc_5: 0.5895  Mult_acc_7: 0.4934  MAE: 0.6106  Corr: 0.8603 
+A: >>  Has0_acc_2: 0.6419  Has0_F1_score: 0.6419  Non0_acc_2: 0.6620  Non0_F1_score: 0.6593  Mult_acc_5: 0.3624  Mult_acc_7: 0.3100  MAE: 1.2723  Corr: 0.3848 
+---------------------EPOCH:  32 --------------------
+VAL >> loss:  2.8535    M_loss:  0.9796   T_loss:  0.5956   A_loss:  1.2783
+M: >>  Has0_acc_2: 0.8734  Has0_F1_score: 0.8740  Non0_acc_2: 0.9028  Non0_F1_score: 0.9027  Mult_acc_5: 0.5983  Mult_acc_7: 0.4934  MAE: 0.6530  Corr: 0.8623 
+T: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8698  Non0_acc_2: 0.8981  Non0_F1_score: 0.8981  Mult_acc_5: 0.6245  Mult_acc_7: 0.5371  MAE: 0.5956  Corr: 0.8629 
+A: >>  Has0_acc_2: 0.6463  Has0_F1_score: 0.6428  Non0_acc_2: 0.6574  Non0_F1_score: 0.6515  Mult_acc_5: 0.3362  Mult_acc_7: 0.2882  MAE: 1.2783  Corr: 0.4059 
+---------------------EPOCH:  33 --------------------
+VAL >> loss:  2.8511    M_loss:  0.9786   T_loss:  0.6037   A_loss:  1.2688
+M: >>  Has0_acc_2: 0.8559  Has0_F1_score: 0.8563  Non0_acc_2: 0.8843  Non0_F1_score: 0.8838  Mult_acc_5: 0.5895  Mult_acc_7: 0.4760  MAE: 0.6524  Corr: 0.8641 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8653  Non0_acc_2: 0.8935  Non0_F1_score: 0.8934  Mult_acc_5: 0.5939  Mult_acc_7: 0.5022  MAE: 0.6037  Corr: 0.8617 
+A: >>  Has0_acc_2: 0.6594  Has0_F1_score: 0.6581  Non0_acc_2: 0.6759  Non0_F1_score: 0.6721  Mult_acc_5: 0.3362  Mult_acc_7: 0.2707  MAE: 1.2688  Corr: 0.4330 
+---------------------EPOCH:  34 --------------------
+VAL >> loss:  2.7856    M_loss:  0.9437   T_loss:  0.6002   A_loss:  1.2417
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8607  Non0_acc_2: 0.8889  Non0_F1_score: 0.8885  Mult_acc_5: 0.6114  Mult_acc_7: 0.5153  MAE: 0.6291  Corr: 0.8674 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8653  Non0_acc_2: 0.8935  Non0_F1_score: 0.8934  Mult_acc_5: 0.6114  Mult_acc_7: 0.5284  MAE: 0.6002  Corr: 0.8644 
+A: >>  Has0_acc_2: 0.6638  Has0_F1_score: 0.6613  Non0_acc_2: 0.6667  Non0_F1_score: 0.6627  Mult_acc_5: 0.3231  Mult_acc_7: 0.2576  MAE: 1.2417  Corr: 0.4384 
+---------------------EPOCH:  35 --------------------
+VAL >> loss:  2.7759    M_loss:  0.9597   T_loss:  0.6002   A_loss:  1.2159
+M: >>  Has0_acc_2: 0.8515  Has0_F1_score: 0.8520  Non0_acc_2: 0.8796  Non0_F1_score: 0.8792  Mult_acc_5: 0.5939  Mult_acc_7: 0.4891  MAE: 0.6398  Corr: 0.8636 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8653  Non0_acc_2: 0.8935  Non0_F1_score: 0.8934  Mult_acc_5: 0.6070  Mult_acc_7: 0.5240  MAE: 0.6002  Corr: 0.8633 
+A: >>  Has0_acc_2: 0.6594  Has0_F1_score: 0.6610  Non0_acc_2: 0.6759  Non0_F1_score: 0.6754  Mult_acc_5: 0.3275  Mult_acc_7: 0.2882  MAE: 1.2159  Corr: 0.4463 
+---------------------EPOCH:  36 --------------------
+VAL >> loss:  2.8089    M_loss:  0.9491   T_loss:  0.6081   A_loss:  1.2518
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8609  Non0_acc_2: 0.8889  Non0_F1_score: 0.8887  Mult_acc_5: 0.5721  Mult_acc_7: 0.4672  MAE: 0.6327  Corr: 0.8627 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8653  Non0_acc_2: 0.8935  Non0_F1_score: 0.8934  Mult_acc_5: 0.5895  Mult_acc_7: 0.5022  MAE: 0.6081  Corr: 0.8599 
+A: >>  Has0_acc_2: 0.6288  Has0_F1_score: 0.6291  Non0_acc_2: 0.6389  Non0_F1_score: 0.6371  Mult_acc_5: 0.3231  Mult_acc_7: 0.2620  MAE: 1.2518  Corr: 0.4373 
+---------------------EPOCH:  37 --------------------
+VAL >> loss:  2.8931    M_loss:  0.9892   T_loss:  0.6065   A_loss:  1.2973
+M: >>  Has0_acc_2: 0.8515  Has0_F1_score: 0.8518  Non0_acc_2: 0.8796  Non0_F1_score: 0.8790  Mult_acc_5: 0.5983  Mult_acc_7: 0.4934  MAE: 0.6595  Corr: 0.8611 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8653  Non0_acc_2: 0.8935  Non0_F1_score: 0.8934  Mult_acc_5: 0.6114  Mult_acc_7: 0.5284  MAE: 0.6065  Corr: 0.8606 
+A: >>  Has0_acc_2: 0.6594  Has0_F1_score: 0.6565  Non0_acc_2: 0.6713  Non0_F1_score: 0.6661  Mult_acc_5: 0.2882  Mult_acc_7: 0.2183  MAE: 1.2973  Corr: 0.4131 
+---------------------EPOCH:  38 --------------------
+VAL >> loss:  2.7932    M_loss:  0.9616   T_loss:  0.6047   A_loss:  1.2269
+M: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8652  Non0_acc_2: 0.8935  Non0_F1_score: 0.8933  Mult_acc_5: 0.5721  Mult_acc_7: 0.4716  MAE: 0.6411  Corr: 0.8648 
+T: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8698  Non0_acc_2: 0.8981  Non0_F1_score: 0.8981  Mult_acc_5: 0.6201  Mult_acc_7: 0.5153  MAE: 0.6047  Corr: 0.8620 
+A: >>  Has0_acc_2: 0.6681  Has0_F1_score: 0.6661  Non0_acc_2: 0.6898  Non0_F1_score: 0.6849  Mult_acc_5: 0.3013  Mult_acc_7: 0.2576  MAE: 1.2269  Corr: 0.4504 
+---------------------EPOCH:  39 --------------------
+VAL >> loss:  2.7675    M_loss:  0.9449   T_loss:  0.6038   A_loss:  1.2189
+M: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8652  Non0_acc_2: 0.8935  Non0_F1_score: 0.8933  Mult_acc_5: 0.5895  Mult_acc_7: 0.4891  MAE: 0.6299  Corr: 0.8652 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8609  Non0_acc_2: 0.8889  Non0_F1_score: 0.8887  Mult_acc_5: 0.5983  Mult_acc_7: 0.5022  MAE: 0.6038  Corr: 0.8633 
+A: >>  Has0_acc_2: 0.6507  Has0_F1_score: 0.6538  Non0_acc_2: 0.6713  Non0_F1_score: 0.6725  Mult_acc_5: 0.3188  Mult_acc_7: 0.2751  MAE: 1.2189  Corr: 0.4815 
+---------------------EPOCH:  40 --------------------
+VAL >> loss:  2.6922    M_loss:  0.8819   T_loss:  0.5941   A_loss:  1.2162
+M: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8653  Non0_acc_2: 0.8935  Non0_F1_score: 0.8934  Mult_acc_5: 0.6026  Mult_acc_7: 0.5153  MAE: 0.5880  Corr: 0.8654 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8653  Non0_acc_2: 0.8935  Non0_F1_score: 0.8934  Mult_acc_5: 0.5895  Mult_acc_7: 0.5066  MAE: 0.5941  Corr: 0.8619 
+A: >>  Has0_acc_2: 0.6376  Has0_F1_score: 0.6385  Non0_acc_2: 0.6528  Non0_F1_score: 0.6514  Mult_acc_5: 0.3231  Mult_acc_7: 0.2795  MAE: 1.2162  Corr: 0.4560 
+---------------------EPOCH:  41 --------------------
+VAL >> loss:  2.7474    M_loss:  0.9226   T_loss:  0.5903   A_loss:  1.2345
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8607  Non0_acc_2: 0.8889  Non0_F1_score: 0.8885  Mult_acc_5: 0.6157  Mult_acc_7: 0.5328  MAE: 0.6151  Corr: 0.8634 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8609  Non0_acc_2: 0.8889  Non0_F1_score: 0.8887  Mult_acc_5: 0.6245  Mult_acc_7: 0.5415  MAE: 0.5903  Corr: 0.8605 
+A: >>  Has0_acc_2: 0.6376  Has0_F1_score: 0.6340  Non0_acc_2: 0.6481  Non0_F1_score: 0.6421  Mult_acc_5: 0.3144  Mult_acc_7: 0.2751  MAE: 1.2345  Corr: 0.4324 
+---------------------EPOCH:  42 --------------------
+VAL >> loss:  2.715    M_loss:  0.8864   T_loss:  0.5934   A_loss:  1.2352
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8607  Non0_acc_2: 0.8889  Non0_F1_score: 0.8885  Mult_acc_5: 0.6376  Mult_acc_7: 0.5415  MAE: 0.5909  Corr: 0.8676 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8609  Non0_acc_2: 0.8889  Non0_F1_score: 0.8887  Mult_acc_5: 0.6157  Mult_acc_7: 0.5328  MAE: 0.5934  Corr: 0.8646 
+A: >>  Has0_acc_2: 0.6550  Has0_F1_score: 0.6516  Non0_acc_2: 0.6620  Non0_F1_score: 0.6567  Mult_acc_5: 0.3057  Mult_acc_7: 0.2664  MAE: 1.2352  Corr: 0.4323 
+---------------------EPOCH:  43 --------------------
+VAL >> loss:  2.7721    M_loss:  0.9183   T_loss:  0.6067   A_loss:  1.247
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8607  Non0_acc_2: 0.8889  Non0_F1_score: 0.8885  Mult_acc_5: 0.5939  Mult_acc_7: 0.4978  MAE: 0.6122  Corr: 0.8596 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8653  Non0_acc_2: 0.8935  Non0_F1_score: 0.8934  Mult_acc_5: 0.5895  Mult_acc_7: 0.5022  MAE: 0.6067  Corr: 0.8587 
+A: >>  Has0_acc_2: 0.6419  Has0_F1_score: 0.6444  Non0_acc_2: 0.6620  Non0_F1_score: 0.6623  Mult_acc_5: 0.3406  Mult_acc_7: 0.2882  MAE: 1.2470  Corr: 0.4354 
+---------------------EPOCH:  44 --------------------
+VAL >> loss:  2.7296    M_loss:  0.8867   T_loss:  0.593   A_loss:  1.2499
+M: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8655  Non0_acc_2: 0.8981  Non0_F1_score: 0.8981  Mult_acc_5: 0.6157  Mult_acc_7: 0.5240  MAE: 0.5911  Corr: 0.8659 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8653  Non0_acc_2: 0.8935  Non0_F1_score: 0.8934  Mult_acc_5: 0.6157  Mult_acc_7: 0.5284  MAE: 0.5930  Corr: 0.8644 
+A: >>  Has0_acc_2: 0.6376  Has0_F1_score: 0.6410  Non0_acc_2: 0.6620  Non0_F1_score: 0.6636  Mult_acc_5: 0.3275  Mult_acc_7: 0.2795  MAE: 1.2499  Corr: 0.4451 
+---------------------EPOCH:  45 --------------------
+VAL >> loss:  2.7274    M_loss:  0.8929   T_loss:  0.5991   A_loss:  1.2355
+M: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8698  Non0_acc_2: 0.8981  Non0_F1_score: 0.8981  Mult_acc_5: 0.6245  Mult_acc_7: 0.5197  MAE: 0.5953  Corr: 0.8678 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8609  Non0_acc_2: 0.8889  Non0_F1_score: 0.8887  Mult_acc_5: 0.6070  Mult_acc_7: 0.5153  MAE: 0.5991  Corr: 0.8626 
+A: >>  Has0_acc_2: 0.6463  Has0_F1_score: 0.6419  Non0_acc_2: 0.6528  Non0_F1_score: 0.6462  Mult_acc_5: 0.3188  Mult_acc_7: 0.2664  MAE: 1.2355  Corr: 0.4343 
+---------------------EPOCH:  46 --------------------
+VAL >> loss:  2.6921    M_loss:  0.8785   T_loss:  0.5941   A_loss:  1.2196
+M: >>  Has0_acc_2: 0.8734  Has0_F1_score: 0.8737  Non0_acc_2: 0.9028  Non0_F1_score: 0.9024  Mult_acc_5: 0.6157  Mult_acc_7: 0.5240  MAE: 0.5856  Corr: 0.8696 
+T: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8698  Non0_acc_2: 0.8981  Non0_F1_score: 0.8981  Mult_acc_5: 0.5939  Mult_acc_7: 0.5109  MAE: 0.5941  Corr: 0.8669 
+A: >>  Has0_acc_2: 0.6463  Has0_F1_score: 0.6466  Non0_acc_2: 0.6620  Non0_F1_score: 0.6600  Mult_acc_5: 0.3668  Mult_acc_7: 0.3057  MAE: 1.2196  Corr: 0.4495 
+---------------------EPOCH:  47 --------------------
+VAL >> loss:  2.6443    M_loss:  0.8781   T_loss:  0.5794   A_loss:  1.1867
+M: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8698  Non0_acc_2: 0.9028  Non0_F1_score: 0.9027  Mult_acc_5: 0.6114  Mult_acc_7: 0.5240  MAE: 0.5854  Corr: 0.8703 
+T: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8696  Non0_acc_2: 0.8981  Non0_F1_score: 0.8980  Mult_acc_5: 0.6245  Mult_acc_7: 0.5371  MAE: 0.5794  Corr: 0.8699 
+A: >>  Has0_acc_2: 0.6681  Has0_F1_score: 0.6712  Non0_acc_2: 0.6898  Non0_F1_score: 0.6912  Mult_acc_5: 0.3057  Mult_acc_7: 0.2620  MAE: 1.1867  Corr: 0.4752 
+---------------------EPOCH:  48 --------------------
+VAL >> loss:  2.6972    M_loss:  0.9103   T_loss:  0.5923   A_loss:  1.1946
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8605  Non0_acc_2: 0.8889  Non0_F1_score: 0.8883  Mult_acc_5: 0.6245  Mult_acc_7: 0.5415  MAE: 0.6068  Corr: 0.8685 
+T: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8607  Non0_acc_2: 0.8889  Non0_F1_score: 0.8885  Mult_acc_5: 0.6288  Mult_acc_7: 0.5459  MAE: 0.5923  Corr: 0.8669 
+A: >>  Has0_acc_2: 0.6681  Has0_F1_score: 0.6681  Non0_acc_2: 0.6806  Non0_F1_score: 0.6786  Mult_acc_5: 0.3231  Mult_acc_7: 0.2707  MAE: 1.1946  Corr: 0.4762 
+---------------------EPOCH:  49 --------------------
+VAL >> loss:  2.71    M_loss:  0.918   T_loss:  0.589   A_loss:  1.203
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8605  Non0_acc_2: 0.8889  Non0_F1_score: 0.8883  Mult_acc_5: 0.6026  Mult_acc_7: 0.5066  MAE: 0.6120  Corr: 0.8670 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8652  Non0_acc_2: 0.8935  Non0_F1_score: 0.8933  Mult_acc_5: 0.6245  Mult_acc_7: 0.5371  MAE: 0.5890  Corr: 0.8678 
+A: >>  Has0_acc_2: 0.6769  Has0_F1_score: 0.6769  Non0_acc_2: 0.6944  Non0_F1_score: 0.6923  Mult_acc_5: 0.3057  Mult_acc_7: 0.2533  MAE: 1.2030  Corr: 0.4724 
+---------------------EPOCH:  50 --------------------
+VAL >> loss:  2.668    M_loss:  0.9131   T_loss:  0.5869   A_loss:  1.168
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8607  Non0_acc_2: 0.8889  Non0_F1_score: 0.8885  Mult_acc_5: 0.6070  Mult_acc_7: 0.5197  MAE: 0.6087  Corr: 0.8644 
+T: >>  Has0_acc_2: 0.8559  Has0_F1_score: 0.8565  Non0_acc_2: 0.8843  Non0_F1_score: 0.8840  Mult_acc_5: 0.6245  Mult_acc_7: 0.5459  MAE: 0.5869  Corr: 0.8663 
+A: >>  Has0_acc_2: 0.6594  Has0_F1_score: 0.6547  Non0_acc_2: 0.6667  Non0_F1_score: 0.6599  Mult_acc_5: 0.3886  Mult_acc_7: 0.3275  MAE: 1.1680  Corr: 0.4783 
+---------------------EPOCH:  51 --------------------
+VAL >> loss:  2.6904    M_loss:  0.8839   T_loss:  0.5928   A_loss:  1.2136
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8607  Non0_acc_2: 0.8889  Non0_F1_score: 0.8885  Mult_acc_5: 0.6332  Mult_acc_7: 0.5459  MAE: 0.5893  Corr: 0.8665 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8653  Non0_acc_2: 0.8935  Non0_F1_score: 0.8934  Mult_acc_5: 0.6245  Mult_acc_7: 0.5459  MAE: 0.5928  Corr: 0.8652 
+A: >>  Has0_acc_2: 0.6594  Has0_F1_score: 0.6556  Non0_acc_2: 0.6667  Non0_F1_score: 0.6609  Mult_acc_5: 0.3144  Mult_acc_7: 0.2707  MAE: 1.2136  Corr: 0.4255 
+---------------------EPOCH:  52 --------------------
+VAL >> loss:  2.6879    M_loss:  0.9053   T_loss:  0.6022   A_loss:  1.1803
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8611  Non0_acc_2: 0.8889  Non0_F1_score: 0.8889  Mult_acc_5: 0.6157  Mult_acc_7: 0.5284  MAE: 0.6035  Corr: 0.8602 
+T: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8699  Non0_acc_2: 0.8981  Non0_F1_score: 0.8983  Mult_acc_5: 0.6070  Mult_acc_7: 0.5240  MAE: 0.6022  Corr: 0.8580 
+A: >>  Has0_acc_2: 0.6681  Has0_F1_score: 0.6644  Non0_acc_2: 0.6759  Non0_F1_score: 0.6703  Mult_acc_5: 0.3275  Mult_acc_7: 0.2707  MAE: 1.1803  Corr: 0.4690 
+---------------------EPOCH:  53 --------------------
+VAL >> loss:  2.6832    M_loss:  0.9174   T_loss:  0.6084   A_loss:  1.1574
+M: >>  Has0_acc_2: 0.8690  Has0_F1_score: 0.8694  Non0_acc_2: 0.8981  Non0_F1_score: 0.8978  Mult_acc_5: 0.6114  Mult_acc_7: 0.5459  MAE: 0.6116  Corr: 0.8631 
+T: >>  Has0_acc_2: 0.8734  Has0_F1_score: 0.8742  Non0_acc_2: 0.9028  Non0_F1_score: 0.9028  Mult_acc_5: 0.6201  Mult_acc_7: 0.5502  MAE: 0.6084  Corr: 0.8613 
+A: >>  Has0_acc_2: 0.6594  Has0_F1_score: 0.6581  Non0_acc_2: 0.6713  Non0_F1_score: 0.6678  Mult_acc_5: 0.3231  Mult_acc_7: 0.2707  MAE: 1.1574  Corr: 0.4763 
+---------------------EPOCH:  54 --------------------
+VAL >> loss:  2.7564    M_loss:  0.9404   T_loss:  0.6011   A_loss:  1.2149
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8603  Non0_acc_2: 0.8889  Non0_F1_score: 0.8881  Mult_acc_5: 0.5939  Mult_acc_7: 0.5153  MAE: 0.6269  Corr: 0.8635 
+T: >>  Has0_acc_2: 0.8646  Has0_F1_score: 0.8652  Non0_acc_2: 0.8935  Non0_F1_score: 0.8933  Mult_acc_5: 0.6201  Mult_acc_7: 0.5371  MAE: 0.6011  Corr: 0.8632 
+A: >>  Has0_acc_2: 0.6681  Has0_F1_score: 0.6592  Non0_acc_2: 0.6806  Non0_F1_score: 0.6688  Mult_acc_5: 0.3319  Mult_acc_7: 0.2576  MAE: 1.2149  Corr: 0.4872 
+---------------------EPOCH:  55 --------------------
+VAL >> loss:  2.6613    M_loss:  0.8993   T_loss:  0.5982   A_loss:  1.1637
+M: >>  Has0_acc_2: 0.8603  Has0_F1_score: 0.8607  Non0_acc_2: 0.8889  Non0_F1_score: 0.8885  Mult_acc_5: 0.6245  Mult_acc_7: 0.5459  MAE: 0.5995  Corr: 0.8634 
+T: >>  Has0_acc_2: 0.8559  Has0_F1_score: 0.8566  Non0_acc_2: 0.8843  Non0_F1_score: 0.8842  Mult_acc_5: 0.6288  Mult_acc_7: 0.5546  MAE: 0.5982  Corr: 0.8617 
+A: >>  Has0_acc_2: 0.6856  Has0_F1_score: 0.6850  Non0_acc_2: 0.7037  Non0_F1_score: 0.7009  Mult_acc_5: 0.3319  Mult_acc_7: 0.2707  MAE: 1.1637  Corr: 0.4947 
+TEST >> loss:  2.5262    M_loss:  0.8263   T_loss:  0.5592   A_loss:  1.1407
+M: >>  Has0_acc_2: 0.8805  Has0_F1_score: 0.8795  Non0_acc_2: 0.9040  Non0_F1_score: 0.9036  Mult_acc_5: 0.6020  Mult_acc_7: 0.5160  MAE: 0.5509  Corr: 0.8852 
+T: >>  Has0_acc_2: 0.8659  Has0_F1_score: 0.8641  Non0_acc_2: 0.8902  Non0_F1_score: 0.8892  Mult_acc_5: 0.6108  Mult_acc_7: 0.5350  MAE: 0.5592  Corr: 0.8822 
+A: >>  Has0_acc_2: 0.7114  Has0_F1_score: 0.7119  Non0_acc_2: 0.7165  Non0_F1_score: 0.7179  Mult_acc_5: 0.3324  Mult_acc_7: 0.2945  MAE: 1.1407  Corr: 0.5372 
+TEST (highest val acc) : >>  Has0_acc_2: 0.8805  Has0_F1_score: 0.8795  Non0_acc_2: 0.9040  Non0_F1_score: 0.9036  Mult_acc_5: 0.6020  Mult_acc_7: 0.5160  MAE: 0.5509  Corr: 0.8852  Loss: 2.5262 
+TEST >> loss:  2.4391    M_loss:  0.8168   T_loss:  0.5428   A_loss:  1.0795
+M: >>  Has0_acc_2: 0.8732  Has0_F1_score: 0.8717  Non0_acc_2: 0.8994  Non0_F1_score: 0.8987  Mult_acc_5: 0.6239  Mult_acc_7: 0.5394  MAE: 0.5445  Corr: 0.8876 
+T: >>  Has0_acc_2: 0.8717  Has0_F1_score: 0.8705  Non0_acc_2: 0.8963  Non0_F1_score: 0.8957  Mult_acc_5: 0.6122  Mult_acc_7: 0.5335  MAE: 0.5428  Corr: 0.8845 
+A: >>  Has0_acc_2: 0.7289  Has0_F1_score: 0.7283  Non0_acc_2: 0.7424  Non0_F1_score: 0.7427  Mult_acc_5: 0.3571  Mult_acc_7: 0.3207  MAE: 1.0795  Corr: 0.5362 
+TEST (lowest val loss) : >>  Has0_acc_2: 0.8732  Has0_F1_score: 0.8717  Non0_acc_2: 0.8994  Non0_F1_score: 0.8987  Mult_acc_5: 0.6239  Mult_acc_7: 0.5394  MAE: 0.5445  Corr: 0.8876  Loss: 2.4391 

@@ -12,15 +12,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 class MultiHeadAttentionFusion(nn.Module):
     def __init__(self, hidden_dim, nheads=4):
-        """
-        初始化多头注意力融合模块。
-
-        参数：
-            hidden_dim (int): 隐藏层维度（例如 768）。
-            nheads (int): 注意力头的数量。
-        """
         super().__init__()
-        # 初始化多头注意力模块
         self.multihead_attn = nn.MultiheadAttention(
             embed_dim=hidden_dim,
             num_heads=nheads,
@@ -28,15 +20,6 @@ class MultiHeadAttentionFusion(nn.Module):
         )
 
     def forward(self, cls_tokens):
-        """
-        前向传播，融合 CLS 标记。
-
-        参数：
-            cls_tokens (torch.Tensor): 输入的 CLS 标记，形状为 [batch_size, 4, hidden_dim]
-
-        返回：
-            torch.Tensor: 融合后的表示，形状为 [batch_size, hidden_dim]
-        """
         # 计算全局上下文（CLS 标记的平均值）
         context = torch.mean(cls_tokens, dim=1)  # [batch_size, hidden_dim]
 

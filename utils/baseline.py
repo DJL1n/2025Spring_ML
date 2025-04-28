@@ -9,6 +9,34 @@ import math
 # 设备设置
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
+class MultiHeadAttentionFusion(nn.Module):
+    def __init__(self, hidden_dim, nheads=4):
+        super().__init__()
+        self.multihead_attn = nn.MultiheadAttention(
+            embed_dim=hidden_dim,
+            num_heads=nheads,
+            dropout=0.0  # 与原始代码保持一致，不使用 dropout
+        )
+
+    def forward(self, cls_tokens):
+        # 计算全局上下文（CLS 标记的平均值）
+        context = torch.mean(cls_tokens, dim=1)  # [batch_size, hidden_dim]
+
+        # 准备多头注意力的输入
+        query = context.unsqueeze(0)  # [1, batch_size, hidden_dim]
+        key = cls_tokens.permute(1, 0, 2)  # [4, batch_size, hidden_dim]
+        value = key  # 键和值相同，[4, batch_size, hidden_dim]
+
+        # 计算多头注意力
+        attn_output, _ = self.multihead_attn(query, key, value)  # attn_output: [1, batch_size, hidden_dim]
+        fused = attn_output.squeeze(0)  # [batch_size, hidden_dim]
+
+        # 添加残差连接
+        residual = context  # [batch_size, hidden_dim]
+        fused_with_residual = fused + residual  # [batch_size, hidden_dim]
+
+        return fused_with_residual
+
 class AttentionFusion(nn.Module):
     def __init__(self, hidden_dim):
         super().__init__()
@@ -59,12 +87,13 @@ class baseline(nn.Module):
             num_attention_heads=self.config.nheads
         )
         self.CME_layers = nn.ModuleList([CMELayer(Bert_config) for _ in range(Bert_config.num_hidden_layers)])
-        self.attention_fusion = AttentionFusion(self.config.dimension)
+        # self.attention_fusion = AttentionFusion(self.config.dimension)
+        self.attention_fusion = MultiHeadAttentionFusion(self.config.dimension)
 
         # 多模态融合输出层
         self.fused_output_layers = nn.Sequential(
             nn.Dropout(config.dropout),
-            nn.Linear(self.config.dimension if self.use_attnFusion else self.config.dimension*2, 512),  # 输入维度改为 768
+            nn.Linear(self.config.dimension if self.config.use_attnFusion else self.config.dimension*2, 512),  # 输入维度改为 768
             nn.ReLU(),
             nn.Linear(512, 1)
         )
@@ -118,8 +147,8 @@ class baseline(nn.Module):
             audio_mask_new[batch][:audio_mask_idx_new[batch]] = 1
 
         # 单模态输出（保持不变）
-        T_features = torch.cat(input_pooler, dim=1)
-        A_features_output = torch.cat(A_features, dim=1)
+        T_features = input_pooler
+        A_features_output = A_features
         T_output = self.T_output_layers(T_features)
         A_output = self.A_output_layers(A_features_output)
 

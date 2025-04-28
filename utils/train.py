@@ -130,7 +130,7 @@ def EnRun(config):
     torch.backends.cudnn.deterministic = True
 
     train_loader, test_loader, val_loader = data_loader(config)
-    if not config.use_context and not config.use_counterfactual:
+    if not config.use_context:
         model = baseline(config).to(device)
     else:
         model = Model(config).to(device)
