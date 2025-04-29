@@ -33,5 +33,4 @@ class EnConfig(object):
 
         self.text_context_length = 5
         self.audio_context_length = 3
-        self.gradient_accumulation_steps = 4
 

@@ -62,7 +62,7 @@ class baseline(nn.Module):
         self.config = config
 
         # 预训练模型加载
-        self.roberta_model = RobertaModel.from_pretrained('roberta-large')
+        self.roberta_model = RobertaModel.from_pretrained('siebert/sentiment-roberta-large-english')
         self.data2vec_model = Data2VecAudioModel.from_pretrained("facebook/data2vec-audio-large-960h")
 
         # 文本和音频输出层
@@ -98,12 +98,6 @@ class baseline(nn.Module):
             nn.Linear(512, 1)
         )
 
-        # 注意力投影层，用于计算上下文相关性
-        self.text_context_attn = nn.Linear(self.config.dimension, self.config.dimension)
-        self.audio_context_attn = nn.Linear(self.config.dimension, self.config.dimension)
-
-        # 可调参数 alpha，控制时序偏置的强度
-        self.alpha = nn.Parameter(torch.tensor(0.5))  # 初始值为 0.5，可根据实验调整
 
     def prepend_cls(self, inputs, masks, layer_name):
         """添加 CLS 标记"""
@@ -146,7 +140,6 @@ class baseline(nn.Module):
         for batch in range(audio_mask_new.shape[0]):
             audio_mask_new[batch][:audio_mask_idx_new[batch]] = 1
 
-        # 单模态输出（保持不变）
         T_features = input_pooler
         A_features_output = A_features
         T_output = self.T_output_layers(T_features)
@@ -163,7 +156,7 @@ class baseline(nn.Module):
         audio_cls = audio_inputs[:, 0, :]
 
         if self.config.use_attnFusion:
-            cls_tokens = torch.stack([text_cls, audio_cls, ], dim=1)  # [batch_size, 4, 768]
+            cls_tokens = torch.stack([text_cls, audio_cls,], dim=1)  # [batch_size, 4, 768]
             fused_hidden_states = self.attention_fusion(cls_tokens)  # [batch_size, 768]
             fused_output = self.fused_output_layers(fused_hidden_states)
         else:
