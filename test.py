@@ -19,7 +19,7 @@ def generate_predictions(model_weights_path, config, output_csv):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     # Load test data
-    _, test_loader, _ = data_loader(config)
+    test_loader= data_loader(config)
 
     # Initialize the model with the provided configuration
     model = Model(config).to(device)
