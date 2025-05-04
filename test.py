@@ -95,7 +95,7 @@ if __name__ == "__main__":
     )
 
     # Output CSV file path
-    output_csv = 'data/test/label.csv'  # Update to your desired output file name
+    output_csv = 'prediction.csv'  # Update to your desired output file name
 
     # Generate predictions and save to CSV
     generate_predictions(model_weights_path, config, output_csv)

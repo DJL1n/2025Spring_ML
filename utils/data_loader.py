@@ -142,8 +142,8 @@ def data_loader(config):
         val_loader = DataLoader(val_data, batch_size=batch_size, shuffle=False)
         return train_loader, test_loader, val_loader
     elif dataset == 'test':
-        csv_path = 'data/test/label.csv'
-        audio_file_path = "data/test/wav"
+        csv_path = 'data/TEST/label.csv'
+        audio_file_path = "data/TEST/wav"
         test_data = Dataset_mosi(csv_path, audio_file_path, 'test', config)
         test_loader = DataLoader(test_data, batch_size=batch_size, shuffle=False)
         return test_loader
