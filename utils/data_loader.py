@@ -35,6 +35,7 @@ class Dataset_mosi(torch.utils.data.Dataset):
         self.feature_extractor = Wav2Vec2FeatureExtractor(feature_size=1, sampling_rate=16000, padding_value=0.0, do_normalize=True, return_attention_mask=True)
 
         self.video_id = df['video_id']
+        self.data = df
         self.config = config
         self.text_context_length = self.config.text_context_length
         self.audio_context_length = self.config.audio_context_length
@@ -113,6 +114,7 @@ class Dataset_mosi(torch.utils.data.Dataset):
             # labels
             "targets": torch.tensor(self.targets_M[index], dtype=torch.float),
             "video_id": self.video_id[index],
+            "clip_id": self.data.iloc[index]['clip_id'],
         }
 
     def __len__(self):
