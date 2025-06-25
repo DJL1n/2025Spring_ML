@@ -13,6 +13,7 @@ def main(args):
         num_hidden_layers=args.num_hidden_layers,
         use_context=args.use_context,
         use_attnFusion=args.use_attnFusion,
+        use_cme=args.use_cme,
     ))
 
 if __name__ == "__main__":
@@ -24,6 +25,7 @@ if __name__ == "__main__":
     parser.add_argument('--num_hidden_layers', type=int, default=5, help='number of hidden layers for cross-modality encoder')
     parser.add_argument('--use_context', type=lambda x: bool(strtobool(x)), default=True, help='enable context reasoning')
     parser.add_argument('--use_attnFusion', type=lambda x: bool(strtobool(x)), default=True, help='enable attention fusion')
+    parser.add_argument('--use_cme', type=lambda x: bool(strtobool(x)), default=True, help='enable attention fusion')
     args = parser.parse_args()
     main(args)
 
