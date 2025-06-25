@@ -228,18 +228,24 @@ class Model(nn.Module):
         text_context_attn_mask = torch.ones(text_context_inputs.size(0), 1).to(device)
         audio_context_attn_mask = torch.ones(audio_context_inputs.size(0), 1).to(device)
 
-        for layer_module in self.CME_layers:
-            text_inputs, audio_inputs = layer_module(text_inputs, text_attn_mask,
-                                                     audio_inputs, audio_attn_mask)
-
-        for layer_module in self.CME_layers:
-            text_context_inputs, audio_context_inputs = layer_module(text_context_inputs, text_context_attn_mask,
-                                                                     audio_context_inputs, audio_context_attn_mask)
-
-        text_cls = text_inputs[:, 0, :]
-        audio_cls = audio_inputs[:, 0, :]
-        text_context_cls = text_context_inputs[:, 0, :]
-        audio_context_cls = audio_context_inputs[:, 0, :]
+        if self.config.use_cme:
+            # 应用 CME_layers 进行跨模态对齐
+            for layer_module in self.CME_layers:
+                text_inputs, audio_inputs = layer_module(text_inputs, text_attn_mask,
+                                                         audio_inputs, audio_attn_mask)
+            for layer_module in self.CME_layers:
+                text_context_inputs, audio_context_inputs = layer_module(text_context_inputs, text_context_attn_mask,
+                                                                         audio_context_inputs, audio_context_attn_mask)
+            # 提取 CLS 标记
+            text_cls = text_inputs[:, 0, :]
+            audio_cls = audio_inputs[:, 0, :]
+            text_context_cls = text_context_inputs[:, 0, :]
+            audio_context_cls = audio_context_inputs[:, 0, :]
+            # 用于融合的特征
+            fusion_features = [text_cls, text_context_cls, audio_cls, audio_context_cls]
+        else:
+            # 不使用 CME_layers，使用单模态特征
+            fusion_features = [input_pooler, context_pooler, A_features, A_context_features]
 
         if self.config.use_attnFusion:
             cls_tokens = torch.stack([text_cls, text_context_cls, audio_cls, audio_context_cls],dim=1)  # [batch_size, 4, 768]
