@@ -14,13 +14,15 @@ class MetricsTop():
             self.metrics_dict = {
                 'MOSI': self.__eval_mosi_regression,
                 'MOSEI': self.__eval_mosei_regression,
-                'SIMS': self.__eval_sims_regression
+                'SIMS': self.__eval_sims_regression,
+                'TEST': self.__eval_mosi_regression  # Added for 'TEST' dataset
             }
         else:
             self.metrics_dict = {
                 'MOSI': self.__eval_mosi_classification,
                 'MOSEI': self.__eval_mosei_classification,
-                'SIMS': self.__eval_sims_classification
+                'SIMS': self.__eval_sims_classification,
+                'TEST': self.__eval_mosi_classification  # Added for 'TEST' dataset
             }
 
     def __eval_mosi_classification(self, y_pred, y_true):
