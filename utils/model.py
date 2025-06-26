@@ -247,16 +247,15 @@ class Model(nn.Module):
             # 不使用 CME_layers，使用单模态特征
             fusion_features = [input_pooler, context_pooler, A_features, A_context_features]
 
+        # 多模态融合
         if self.config.use_attnFusion:
-            cls_tokens = torch.stack([text_cls, text_context_cls, audio_cls, audio_context_cls],dim=1)  # [batch_size, 4, 768]
-            fused_hidden_states = self.attention_fusion(cls_tokens)  # [batch_size, 768]
-            fused_output = self.fused_output_layers(fused_hidden_states)
+            cls_tokens = torch.stack(fusion_features, dim=1)  # [batch_size, 4, 1024]
+            fused_hidden_states = self.attention_fusion(cls_tokens)  # [batch_size, 1024]
         else:
-            fused_hidden_states = torch.cat((text_inputs[:, 0, :], text_context_inputs[:, 0, :], audio_inputs[:, 0, :],
-                                             audio_context_inputs[:, 0, :]), dim=1)  # Shape is [batch_size, 1024*4]
+            fused_hidden_states = torch.cat(fusion_features, dim=1)  # [batch_size, 4096]
+        fused_output = self.fused_output_layers(fused_hidden_states)
 
-            fused_output = self.fused_output_layers(fused_hidden_states)  # Shape is [batch_size, 1]
-
+        # 输出
         output = {
             'T': T_output,
             'A': A_output,
